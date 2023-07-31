@@ -5,7 +5,7 @@ function Layout() {
     const location = useLocation()
     return (
         <div className='md:flex md:min-h-screen'>
-            <aside className='md:w-1/4 bg-blue-900 px-5 py-10'>
+            <aside className='md:w-1/4 bg-white px-5 py-10'>
 
                 <div className="flex flex-shrink-0 items-center">
                   <img
@@ -21,17 +21,17 @@ function Layout() {
                 </div>
                 <nav className='mt-10'>
                     <Link
-                        className={`${location.pathname === '/' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
+                        className={`${location.pathname === '/' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-600 `}
                         to="/">Lista</Link>
 
                     <Link
-                        className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
+                        className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-600 `}
                         to="/clientes/nuevo">Escanear Estudiante</Link>
                     <Link
-                        className={`${location.pathname === '/formulario' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
+                        className={`${location.pathname === '/formulario' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-600 `}
                         to="/formulario">Formulario</Link>
                     <Link
-                        className={`${location.pathname === '/inactivo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
+                        className={`${location.pathname === '/inactivo' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-600 `}
                         to="/inactivo">Lista Inactivo</Link>
                 </nav>
             </aside>
