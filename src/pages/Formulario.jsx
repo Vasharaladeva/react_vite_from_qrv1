@@ -87,7 +87,7 @@ const AddParejaForm = () => {
       formData.append('email', value.email)
     
 
-      const respuesta = await axios.post('http://52.87.247.113:2000/estudiante', formData);
+      const respuesta = await axios.post('http://52.87.247.113/estudiante', formData);
       console.log(respuesta);
       toast.success('El estudiante se agregó correctamente');
 
