@@ -12,7 +12,7 @@ const UserProfile = () => {
         // Función para obtener los datos del usuario por su ID
         const fetchUserData = async () => {
             try {
-                const response = await axios.get(`http://52.87.247.113:2000/estudiante/${id}`);
+                const response = await axios.get(`http://52.87.247.113/estudiante/${id}`);
                 setUser(response.data);
                 setIsOn(response.data.estatus); // Inicializar el estado del toggle con el estatus del usuario
             } catch (error) {
@@ -28,7 +28,7 @@ const UserProfile = () => {
         const updatedStatus = !user.estatus;
       
         axios
-          .put(`http://52.87.247.113:2000/estudiante/${id}/cambiar-estatus`, { estatus: updatedStatus })
+          .put(`http://52.87.247.113/estudiante/${id}/cambiar-estatus`, { estatus: updatedStatus })
           .then((response) => {
             setIsOn(updatedStatus); // Actualizar el estado del toggle inmediatamente
             setUser({ ...user, estatus: updatedStatus }); // Actualizar el estado del usuario con el valor del backend
@@ -49,7 +49,7 @@ const UserProfile = () => {
                 <p className="mt-1 max-w-2xl text-sm text-gray-500">Informacion personal del Estudiante {user._id}</p>
 
                 <div className="flex items-center justify-between">
-                    <img className="w-20 h-20 rounded-full" src={`http://52.87.247.113:2000/${user.imagenPerfil}`} alt="Imagen de perfil" />
+                    <img className="w-20 h-20 rounded-full" src={`http://52.87.247.113/${user.imagenPerfil}`} alt="Imagen de perfil" />
 
                     <div className="flex items-center" onClick={handleToggleStatus}>
                         {/* Toggle Track */}
@@ -119,7 +119,7 @@ const UserProfile = () => {
                                     <div className="ml-4 flex-shrink-0">
                                         <img
                                             className="inline-flex border rounded-md border-gray-100 dark:border-gray-600 w-24 max-h-24 p-2 m-2"
-                                            src={`http://52.87.247.113:2000/${user.imagenDocumento}`} alt="img" />
+                                            src={`http://52.87.247.113/${user.imagenDocumento}`} alt="img" />
                                     </div>
                                 </li>
                                 <li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
@@ -130,7 +130,7 @@ const UserProfile = () => {
                                     <div className="ml-4 flex-shrink-0">
                                         <img
                                             className="inline-flex border rounded-md border-gray-100 dark:border-gray-600 w-24 max-h-24 p-2 m-2"
-                                            src={`http://52.87.247.113:2000/${user.imagenVoleto}`} alt="img" />
+                                            src={`http://52.87.247.113/${user.imagenVoleto}`} alt="img" />
                                     </div>
                                 </li>
                                 <li className="flex items-center justify-between py-3 pl-3 pr-4 text-sm">
@@ -141,7 +141,7 @@ const UserProfile = () => {
                                     <div className="ml-4 flex-shrink-0">
                                         <img
                                             className="inline-flex border rounded-md border-gray-100 dark:border-gray-600 w-24 max-h-24 p-2 m-2"
-                                            src={`http://52.87.247.113:2000/${user.imagenPermiso}`} alt="img" />
+                                            src={`http://52.87.247.113/${user.imagenPermiso}`} alt="img" />
                                     </div>
                                 </li>
                             </ul>
