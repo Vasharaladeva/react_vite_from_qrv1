@@ -11,7 +11,7 @@ const Inactivo = () => {
     const [statusChanged, setStatusChanged] = useState(false);
 
     useEffect(() => {
-        axios.get(`https://form-node-back.onrender.com/estudianteina`)
+        axios.get(`http://52.87.247.113:2000/estudianteina`)
             .then((response) => {
                 setEstudiantes(response.data.estudiantes);
                 setEstudiantesCount(response.data.estudiantesCount);
@@ -22,11 +22,11 @@ const Inactivo = () => {
     }, []);
 
     const handleChangeStatus = () => {
-        axios.put('https://form-node-back.onrender.com/estudiante/cambiar-estatus')
+        axios.put('http://52.87.247.113:2000/estudiante/cambiar-estatus')
             .then((response) => {
                 setStatusChanged(true);
 
-                axios.get(`https://form-node-back.onrender.com/estudianteina`)
+                axios.get(`http://52.87.247.113:2000/estudianteina`)
                     .then((response) => {
                         setEstudiantes(response.data.estudiantes);
                         setEstudiantesCount(response.data.estudiantesCount);
