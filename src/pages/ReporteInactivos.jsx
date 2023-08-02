@@ -28,7 +28,7 @@ const ReporteInactivos = () => {
 
   React.useEffect(() => {
     axios
-      .get('http://52.87.247.113:2000/estudianteina')
+      .get('http://52.87.247.113/estudianteina')
       .then((response) => {
         setEstudiantes(response.data.estudiantes);
       })
