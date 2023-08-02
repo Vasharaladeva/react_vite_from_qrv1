@@ -10,4 +10,3 @@ export async function obtenerCliente(id) {
     return resultado
 }
 
-
