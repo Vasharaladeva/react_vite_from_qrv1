@@ -11,7 +11,7 @@ const User = () => {
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    axios.get(`http://52.87.247.113/estudiante`)
+    axios.get(`https://52.87.247.113/estudiante`)
       .then((response) => {
         setEstudiantes(response.data.estudiantes);
         setEstudiantesCount(response.data.estudiantesCount);
@@ -113,7 +113,7 @@ const User = () => {
                                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                   <div className="flex items-center">
                                     <div className="h-10 w-10 flex-shrink-0">
-                                      <img className="h-10 w-10 rounded-full" src={`http://52.87.247.113/${person.imagenPerfil}`} alt="" />
+                                      <img className="h-10 w-10 rounded-full" src={`https://52.87.247.113/${person.imagenPerfil}`} alt="" />
                                     </div>
                                     <div className="ml-4">
                                       <div className="font-medium text-gray-900">{person.nombre} {person.apellido}</div>
