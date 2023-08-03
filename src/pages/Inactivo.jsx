@@ -11,7 +11,7 @@ const Inactivo = () => {
     const [statusChanged, setStatusChanged] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://52.87.247.113/estudianteina`)
+        axios.get(`https://52.87.247.113/estudianteina`)
             .then((response) => {
                 setEstudiantes(response.data.estudiantes);
                 setEstudiantesCount(response.data.estudiantesCount);
@@ -22,7 +22,7 @@ const Inactivo = () => {
     }, []);
 
     const handleChangeStatus = () => {
-        axios.put('http://52.87.247.113/estudiante/cambiar-estatus')
+        axios.put('https://52.87.247.113/estudiante/cambiar-estatus')
             .then((response) => {
                 setStatusChanged(true);
 
@@ -106,7 +106,7 @@ const Inactivo = () => {
                                                                 <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm sm:pl-6">
                                                                     <div className="flex items-center">
                                                                         <div className="h-10 w-10 flex-shrink-0">
-                                                                            <img className="h-10 w-10 rounded-full" src={`http://52.87.247.113/${person.imagenPerfil}`} alt="" />
+                                                                            <img className="h-10 w-10 rounded-full" src={`https://52.87.247.113/${person.imagenPerfil}`} alt="" />
                                                                         </div>
                                                                         <div className="ml-4">
                                                                             <div className="font-medium text-gray-900">{person.nombre} {person.apellido}</div>
