@@ -26,7 +26,7 @@ const Inactivo = () => {
             .then((response) => {
                 setStatusChanged(true);
 
-                axios.get(`http://52.87.247.113/estudianteina`)
+                axios.get(`https://52.87.247.113/estudianteina`)
                     .then((response) => {
                         setEstudiantes(response.data.estudiantes);
                         setEstudiantesCount(response.data.estudiantesCount);
