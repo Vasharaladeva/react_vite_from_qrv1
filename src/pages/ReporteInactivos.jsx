@@ -48,6 +48,7 @@ const ReporteInactivos = () => {
                 <Text>
                   Nombre: {person.nombre} {person.apellido}
                 </Text>
+                <Text>Telefono:: {person.telefono}</Text>
                 <Text>Email: {person.email}</Text>
                 <Text>Colegio: {person.colegio}</Text>
                 {/* Agrega aquí los demás campos que desees mostrar en el reporte */}
