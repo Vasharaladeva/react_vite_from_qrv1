@@ -30,29 +30,13 @@ function NuevoCliente() {
       });
     } else {
       setScannerResult(null);
-      toast.error("¡Usuario ya escaneado!", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-      });
+
     }
   }
 
   function error(err) {
     console.warn(err);
-    toast.error("¡Error al escanear!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
+
   }
 
   useEffect(() => {
@@ -73,14 +57,14 @@ function NuevoCliente() {
   }, [scannedUsers]);
 
   const changeStatusOfScannedUsers = (newStatus) => {
-    axios.put('https://52.87.247.113/estudiante/cambiar-stats', {
+    axios.put('http://localhost:2000/estudiante/cambiar-stats', {
       usuarios: scannedUsers,
       nuevoEstado: newStatus,
     })
     .then((response) => {
       setStatusChanged(newStatus); // Cambiar el estado local para mostrar el nuevo estado en el botón
 
-      axios.get(`https://52.87.247.113/estudianteact`)
+      axios.get(`http://localhost:2000/estudianteact`)
         .then((response) => {
           // Obtener los usuarios activados desde la respuesta de la API
           setActivatedUsers(response.data.usuariosActivados);
@@ -105,7 +89,7 @@ function NuevoCliente() {
             <h1 className="font-black text-4xl text-blue-900">Scanear aquí:</h1>
             <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-20">
                 <div id="reader"></div>
-                
+
                 {scannedUsers.length > 0 && (
                     <>
                         <div className="border-t border-gray-200 pt-4 pb-3">
